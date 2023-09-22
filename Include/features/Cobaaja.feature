@@ -16,17 +16,18 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
-Feature: Title of your feature
-  I want to use this template for my feature file
+@Login
+Feature: login feature
+  as user i want login
 
-  @tag1
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
+  @Valid
+  Scenario Outline: User login with valid data
+    Given User Navigate to web shop demo
+    When User click login button
+    And User Input email <email> and password <password> 
+    Then User click login
+    
+    Examples:
+    |email                    |password|
+    |wahidsumarji123@gmail.com|wahid123|
 
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
